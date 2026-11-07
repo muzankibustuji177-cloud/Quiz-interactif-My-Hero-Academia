@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080d18">
+<title>Qui serait ton mari dans MHA ?</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--bg:#080d18;--panel:rgba(13,22,38,.88);--line:rgba(148,190,255,.22);--cyan:#67e8f9;--green:#7cffb2;--violet:#b99aff;--gold:#ffd58a;--white:#f4f8ff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--white);font-family:Inter,system-ui,sans-serif;background:radial-gradient(ellipse at 15% 15%,#173b4a 0,transparent 36%),radial-gradient(ellipse at 85% 5%,#34214d 0,transparent 34%),linear-gradient(145deg,#080d18,#11182a 55%,#080d18);overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;inset:-30%;pointer-events:none;z-index:-1}
+body:before{background:repeating-linear-gradient(115deg,transparent 0 80px,rgba(103,232,249,.035) 81px 83px,transparent 84px 160px);animation:drift 24s linear infinite}
+body:after{background:radial-gradient(circle,rgba(124,255,178,.13) 1px,transparent 2px);background-size:48px 48px;mask-image:linear-gradient(transparent,#000 20%,#000 80%,transparent);opacity:.32}
+@keyframes drift{to{transform:translate3d(5%,3%,0)}}
+@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{box-shadow:0 0 18px #67e8f933,0 0 45px #7cffb211}50%{box-shadow:0 0 28px #67e8f966,0 0 70px #7cffb233}}
+@keyframes flicker{0%,100%{opacity:.7}50%{opacity:1}}
+@keyframes zap{0%{transform:scale(.96);opacity:0}30%{opacity:1}100%{transform:scale(1.04);opacity:0}}
+main{width:min(820px,100% - 28px);margin:auto;padding:30px 0 24px}
+header{text-align:center;margin:0 auto 24px;max-width:700px}
+.logo{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid #67e8f955;border-radius:99px;background:#0c1b2b99;color:var(--cyan);font-size:.7rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+.logo i{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 12px var(--green)}
+h1,h2,.question{font-family:"Barlow Condensed",Impact,sans-serif;text-transform:uppercase}
+h1{font-size:clamp(2.7rem,9vw,5rem);line-height:.92;letter-spacing:.015em;margin:18px 0 12px;text-shadow:0 5px 35px #67e8f933}
+h1 span{display:block;color:var(--cyan);text-shadow:0 0 25px #67e8f966}
+.sub{color:#b8c7dc;line-height:1.65;font-size:.95rem;margin:0 auto;max-width:570px}
+.panel{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(18,31,51,.94),rgba(10,17,31,.94));border:1px solid var(--line);border-radius:24px;padding:clamp(20px,5vw,38px);box-shadow:0 25px 90px #0008;animation:pulse 6s ease-in-out infinite}
+.panel:before{content:"";position:absolute;inset:0 0 auto;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),var(--violet),transparent);opacity:.85}
+.meta{display:flex;justify-content:space-between;gap:12px;color:#b8c7dc;font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+#pct{color:var(--green)}
+.track{height:8px;background:#26354a;border-radius:30px;margin:12px 0 30px;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--green),var(--violet));border-radius:30px;box-shadow:0 0 18px #67e8f988;transition:width .55s cubic-bezier(.2,.8,.2,1)}
+.question-wrap{animation:rise .38s ease both}
+.kicker{color:var(--gold);font-size:.7rem;letter-spacing:.22em;font-weight:800;text-transform:uppercase;margin-bottom:10px}
+.question{font-size:clamp(1.8rem,5.8vw,2.8rem);line-height:1.04;margin:0 0 24px;letter-spacing:.02em}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.answer{position:relative;min-height:74px;padding:16px 17px;text-align:left;color:var(--white);font:600 .94rem Inter,sans-serif;background:linear-gradient(135deg,#17273d,#121d30);border:1px solid #40536b;border-radius:15px;cursor:pointer;transition:transform .18s,border-color .18s,background .18s,box-shadow .18s;overflow:hidden}
+.answer:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(var(--cyan),var(--green));opacity:.65}
+.answer:after{content:"";position:absolute;width:80px;height:130px;top:-40px;left:-100px;transform:rotate(25deg);background:#fff2;transition:left .35s}
+.answer:hover{transform:translateY(-3px);border-color:var(--cyan);background:linear-gradient(135deg,#1d3850,#19243c);box-shadow:0 9px 28px #0005,0 0 18px #67e8f922}
+.answer:hover:after{left:110%}
+.answer:active{transform:scale(.98)}
+.note{text-align:center;color:#8294ad;font-size:.78rem;line-height:1.5;margin:22px 0 0}
+.hidden{display:none!important}
+.result{text-align:center}
+.result-top{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-size:.72rem;font-weight:900;letter-spacing:.22em;text-transform:uppercase}
+.result-top:before,.result-top:after{content:"";width:26px;height:1px;background:var(--green);box-shadow:0 0 10px var(--green)}
+.result-emblem{width:118px;height:118px;margin:20px auto 14px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 25%,#334d67,#111b2d 68%);border:2px solid #67e8f988;box-shadow:0 0 0 8px #67e8f910,0 0 45px #67e8f944;position:relative}
+.result-emblem:after{content:"";position:absolute;inset:-9px;border:1px dashed #b99aff88;border-radius:50%;animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.result-emblem span{font:900 2.7rem "Barlow Condensed",sans-serif;color:var(--cyan);text-shadow:0 0 22px #67e8f9}
+.result h2{font-size:clamp(2.8rem,9vw,4.5rem);line-height:.95;margin:10px 0;color:var(--white)}
+.tag{display:inline-block;color:var(--gold);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;margin:8px 0 18px}
+.desc{max-width:590px;margin:0 auto;color:#c5d1e2;line-height:1.75}
+.quote{max-width:580px;margin:22px auto;padding:18px 20px;background:linear-gradient(100deg,#182b40,#22203b);border:1px solid #b99aff55;border-left:3px solid var(--violet);border-radius:13px;color:#f3eaff;font-weight:600;font-style:italic;line-height:1.55}
+.plus{font:900 clamp(1.7rem,6vw,2.7rem) "Barlow Condensed",sans-serif;letter-spacing:.15em;color:var(--green);text-shadow:0 0 22px #7cffb277;margin:8px 0 20px;animation:flicker 2.5s infinite}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.btn{padding:14px 22px;border:1px solid transparent;border-radius:99px;background:linear-gradient(100deg,var(--cyan),var(--green));color:#07131c;font-weight:900;letter-spacing:.04em;cursor:pointer;box-shadow:0 8px 25px #67e8f933;transition:transform .18s,filter .18s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn.alt{background:transparent;border-color:#60738c;color:var(--white);box-shadow:none}
+footer{text-align:center;color:#66758c;font-size:.72rem;line-height:1.6;margin:20px auto 0;max-width:650px}
+.bolt{position:fixed;pointer-events:none;width:3px;height:90px;background:linear-gradient(transparent,var(--green),transparent);filter:drop-shadow(0 0 8px var(--green));transform:rotate(35deg);animation:zap .55s ease-out forwards;z-index:5}
+@media(max-width:560px){main{padding-top:22px}.answers{grid-template-columns:1fr}.answer{min-height:62px}.panel{border-radius:20px}.sub{font-size:.88rem}.question{margin-bottom:20px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="logo"><i></i> My Hero Academia · Quiz personnalité</div>
+  <h1>Qui serait ton mari <span>dans MHA ?</span></h1>
+  <p class="sub">Entre dans l'univers des héros. Réponds instinctivement aux 10 questions et découvre quel personnage adulte pourrait te correspondre.</p>
+</header>
+
+<section class="panel" id="quiz">
+  <div class="meta"><span id="step">Question 1 sur 10</span><span id="pct">10 %</span></div>
+  <div class="track"><div class="fill" id="fill"></div></div>
+  <div class="question-wrap" id="questionWrap">
+    <div class="kicker">Épreuve de compatibilité</div>
+    <h2 class="question" id="question"></h2>
+    <div class="answers" id="answers"></div>
+  </div>
+  <p class="note">Choisis la réponse qui te ressemble le plus. Ton instinct est ton meilleur alter.</p>
+</section>
+
+<section class="panel result hidden" id="result">
+  <div class="result-top">Analyse terminée</div>
+  <div class="result-emblem"><span id="initials">MHA</span></div>
+  <div class="kicker">Ton partenaire idéal serait…</div>
+  <h2 id="name"></h2>
+  <div class="tag" id="tag"></div>
+  <p class="desc" id="desc"></p>
+  <div class="quote" id="quote"></div>
+  <div class="plus">PLUS ULTRA !</div>
+  <p class="note">Quiz fictif pour s'amuser. Les élèves mineurs ne sont pas inclus dans cette version romantique.</p>
+  <div class="actions">
+    <button class="btn" id="share">Partager mon résultat ↗</button>
+    <button class="btn alt" id="restart">↻ Refaire le quiz</button>
+  </div>
+  <p class="note" id="status" aria-live="polite"></p>
+</section>
+<footer>Quiz fan-made non officiel · My Hero Academia appartient à ses ayants droit.<br>Une expérience créée par une fan, pour les fans.</footer>
+</main>
+<script>
+const people={
+aizawa:["Shota Aizawa","Le calme protecteur","Tu apprécies les personnes fiables, discrètes et attentives. Aizawa montrerait son affection par de petites attentions et une présence rassurante.","« Viens te reposer. Je m'occupe du reste. »"],
+hawks:["Hawks","Le charmeur spontané","Tu matches avec quelqu'un de vif, drôle et sociable, qui sait aussi être sérieux quand cela compte.","« J'avais prévu une journée tranquille… puis tu es arrivée. »"],
+dabi:["Dabi","Le mystérieux indépendant","Tu es intriguée par les personnalités réservées et difficiles à cerner. La confiance et le respect seraient essentiels.","« T'as pas besoin de parler. Je suis là. »"],
+mic:["Present Mic","L'énergie contagieuse","Tu pourrais aimer quelqu'un d'expressif et enthousiaste, qui met de l'ambiance et sait te faire rire.","« LET'S GO ! On va faire quelque chose de génial ! »"],
+allmight:["All Might","Le grand cœur rassurant","Tu apprécies la gentillesse, le courage et les personnes qui encouragent les autres. Il serait chaleureux et loyal.","« Tu peux compter sur moi. Plus ultra ! »"],
+endeavor:["Endeavor","La détermination intense","Tu es impressionnée par les personnalités ambitieuses. L'écoute et les efforts seraient indispensables dans votre duo.","« Je ne promets pas d'être parfait. Je promets de faire des efforts. »"],
+gentle:["Gentle Criminal","Le romantique théâtral","Tu aimes les gestes attentionnés et les petites mises en scène. Il ferait de chaque sortie une aventure élégante.","« Permets-moi de rendre cette journée mémorable ! »"],
+jeanist:["Best Jeanist","L'élégance et la stabilité","Tu sembles aimer les personnes organisées, raffinées et fiables, attentives aux petits détails.","« La patience et le soin font toute la différence. »"],
+fatgum:["Fat Gum","La douceur généreuse","Tu matches avec une personnalité chaleureuse, drôle et bienveillante, qui sait te réconforter.","« On souffle un peu. Tout va s'arranger. »"],
+nighteye:["Sir Nighteye","Le sérieux attentionné","Tu apprécies l'intelligence, la rigueur et l'humour subtil. Il serait loyal et attentif aux détails.","« J'ai prévu du temps pour toi. »"],
+shigaraki:["Tomura Shigaraki","Le solitaire compliqué","Tu es intriguée par les personnalités complexes et introverties. Une relation saine demanderait confiance et limites claires.","« Reste si tu le veux. Je ne vais pas te retenir. »"],
+twice:["Twice","Le cœur imprévisible","Tu pourrais apprécier quelqu'un d'expressif, drôle et loyal, avec toujours une remarque inattendue.","« Je suis content que tu sois là ! Enfin… je crois que je l'ai déjà dit ! »"]
+};
+const qs=[
+["Pour une journée parfaite, tu choisis…",[["Une soirée tranquille à la maison","aizawa"],["Une escapade improvisée","hawks"],["Un endroit calme loin de la foule","dabi"],["Une sortie pleine d'animations","mic"]]],
+["Quelle qualité compte le plus pour toi ?",[["La loyauté","allmight"],["L'ambition","endeavor"],["La créativité","gentle"],["La fiabilité","jeanist"]]],
+["Après une mauvaise journée, tu préfères…",[["Quelqu'un qui t'écoute sans te presser","aizawa"],["Quelqu'un qui te fait rire","fatgum"],["Un encouragement motivant","allmight"],["Un peu d'espace, puis une discussion","dabi"]]],
+["Quel rendez-vous te plairait le plus ?",[["Un dîner élégant","nighteye"],["Une promenade pleine de surprises","hawks"],["Une sortie culturelle","gentle"],["Un moment simple et confortable","fatgum"]]],
+["Quel tempérament te correspond ?",[["Calme et observateur","aizawa"],["Joueur et sociable","mic"],["Sérieux et déterminé","endeavor"],["Discret et indépendant","shigaraki"]]],
+["Quel petit geste te toucherait ?",[["Se souvenir d'un détail important","jeanist"],["Te préparer quelque chose","fatgum"],["Prendre de tes nouvelles","hawks"],["Respecter ton besoin de calme","aizawa"]]],
+["Dans un duo, tu préfères quelqu'un qui…",[["Te pousse à croire en toi","allmight"],["Te surprend souvent","twice"],["Planifie et anticipe","nighteye"],["T'encourage à créer et rêver","gentle"]]],
+["Quelle ambiance te plaît ?",[["Un cocon paisible","aizawa"],["Une aventure spontanée","hawks"],["Une soirée chic","jeanist"],["Un fou rire sans fin","mic"]]],
+["Face à un désaccord, tu privilégies…",[["Parler calmement et écouter","fatgum"],["Prendre du recul avant de discuter","dabi"],["Chercher une solution concrète","nighteye"],["Reconnaître ses torts et progresser","endeavor"]]],
+["Choisis le mot qui te ressemble…",[["Tendresse","fatgum"],["Liberté","hawks"],["Détermination","endeavor"],["Originalité","twice"]]]
+];
+let i=0,score={};
+const el=id=>document.getElementById(id);
+function draw(){
+ const [q,a]=qs[i];
+ el("step").textContent=`Question ${i+1} sur ${qs.length}`;
+ el("pct").textContent=`${Math.round((i+1)/qs.length*100)} %`;
+ el("fill").style.width=`${(i+1)/qs.length*100}%`;
+ el("question").textContent=q;
+ el("answers").replaceChildren();
+ a.forEach(([label,key],n)=>{
+  const b=document.createElement("button");
+  b.className="answer";b.type="button";b.textContent=label;
+  b.setAttribute("aria-label",`Réponse ${n+1} : ${label}`);
+  b.addEventListener("click",()=>pick(key),{once:true});
+  el("answers").append(b);
+ });
+ el("questionWrap").style.animation="none";
+ requestAnimationFrame(()=>el("questionWrap").style.animation="rise .38s ease both");
+}
+function pick(key){
+ score[key]=(score[key]||0)+1;
+ const bolt=document.createElement("i");bolt.className="bolt";
+ bolt.style.left=`${20+Math.random()*60}%`;bolt.style.top=`${25+Math.random()*45}%`;
+ document.body.append(bolt);setTimeout(()=>bolt.remove(),600);
+ i++;
+ if(i<qs.length)draw();else result();
+}
+function result(){
+ const high=Math.max(...Object.values(score));
+ const winners=Object.keys(score).filter(k=>score[k]===high);
+ const p=people[winners[Math.floor(Math.random()*winners.length)]];
+ el("quiz").classList.add("hidden");el("result").classList.remove("hidden");
+ el("name").textContent=p[0];el("tag").textContent=p[1];el("desc").textContent=p[2];el("quote").textContent=p[3];
+ el("initials").textContent=p[0].split(" ").map(x=>x[0]).join("").slice(0,3).toUpperCase();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+el("restart").onclick=()=>{
+ i=0;score={};el("result").classList.add("hidden");el("quiz").classList.remove("hidden");el("status").textContent="";draw();window.scrollTo({top:0,behavior:"smooth"});
+};
+el("share").onclick=async()=>{
+ const t=`Mon résultat au quiz « Qui serait ton mari dans MHA ? » : ${el("name").textContent} 🖤`;
+ try{
+  if(navigator.share)await navigator.share({title:"Mon résultat MHA",text:t});
+  else{await navigator.clipboard.writeText(t);el("status").textContent="Résultat copié ! Tu peux maintenant le partager."}
+ }catch(e){if(e.name!=="AbortError")el("status").textContent=t}
+};
+draw();
+</script>
+</body>
+</html>
